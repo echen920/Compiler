@@ -1,0 +1,116 @@
+Testing plan:
+In our testing plan after we finished implementing each feature we would informally test the code generator with small and quick test cases. After it was established that the program is working, we would then write formal test cases for each section and debug the program. After the bug was addressed, we would go back to previous test cases the make sure that other parts of the codegen were not affected.
+
+Each test program addresses one feature of the language and the idea was that these programs would overlap each other to ensure that the entire code generation works as one piece. The reason for the programs being small was that we could isolate each feature of the program language, and it would make debugging easier as the generated machine code would be smaller and easier to walk through.
+
+When running the test cases we would run it with the flag -T x to see the instructions that were executed, and we also viewed the sample generated code.
+
+It is important to note that although there were no official test cases for the put statement, it was thoroughly used in testing and was evaluated indirectly.
+
+Passing Tests:
+
+IfStatements
+1. If statements with a constant boolean
+output: "Hello World!"
+2. If-else statements with a constant boolean as conditional
+output: "Hello World!This works!"
+3. Nested if statements
+output "Hello world! How are you?"
+4. Nested if statement in the else clause
+output "Hello world!"
+5. Test that statements around the if statement blocks execute properly
+output "Hello world! How are you? I hope this passes! Fingers crossed!"
+6. Test boolean variable as the condition
+output "Hello world!"
+7. Test with anonymous function as the condition
+output "Hey! Hello world!"
+
+LoopStatements
+1. Test a regular loop with exit statement, and regular loop with exit when statement
+output: "Hey!" 5 times and "Hello!" 5 times
+2. Test a while loop
+output: "Hey!" 5 times
+3. Test a while loop with an exit inside
+output: "hey!" 3 times
+4. Test a nested loop
+output: helloheyheyheyhey 5 times
+
+Function and Procedure Call statments
+1. Test with function with one parameter
+2. Test with function with multiple parameters
+3. Test with procedure with no parameters
+4. Test with procedure with one parameters
+5. Test with procedure with multiple parameters
+6. Test with nested procedure with no parameters
+7. Test with nested function with no parameters
+8. Test with nested function with parameters
+9. Test with nested procedure with parameters
+
+AnonFunction
+1. Test with integer
+output: 3
+2. Test with boolean
+output: 0 123
+3. Test nested anonymous functions
+output: Hey! Hello World! 1
+4. Calling a procedure from an anonymous function
+output: Hey! Hello World!
+
+GetStatement
+1. Test one variable
+2. Test with multiple variables
+
+Expressions
+1. Check all binary boolean expressions with constants
+output: "Hello World!" five times
+2. Check all binary boolean expressions with variables
+output: prints numbers 1-16
+3. Check all binary boolean expressions with functions
+output: prints numbers 1-16
+4. Check the definition of conditional and and OR
+output: prints numbers 1 and 2
+5. Test unary operators
+    a: test negation
+    output: 1-4
+    b: test negation with boolean expressions
+    output: 1-4
+    c: test negation of boolean functions
+    output: 1-4
+    d: test negation of anonymous functions
+    output: 1-5
+6. Check all comparison expressions with constants
+7. Check all comparison expressions with variables
+8. Check all comparison expressions with functions
+
+ArrayDecl
+1. Check simple array declaration and assignment
+2. Check general bound declaration and its assignment
+3. Check two dimensional array with single integer subscription
+4. Check two dimensional array with general bound subscription
+5. Check two dimensional array with variable bound
+6. Check one dimensional array with function bound
+7. Check one dimensional array with expression bound
+8. Check two dimensional array with function bound
+
+CompareExnp
+1. Check less equal expression with literals, variables and functions
+2. Check less than expression with literals, variables and functions
+3. Check more than expression with literals, variables and functions
+4. Check more equal expression with literals, variables and functions
+
+EqualExpn
+1. Check equal expression with literals, variables and functions
+2. Check not equal expression with literals, variables and functions
+
+ArithExpn
+1. Check operators with integer constants and variables
+2. Check operators with integer constants, variables and functions
+3. Check the negation operator with integer constants, variables and functions
+
+
+Failing Tests:
+1. Test array out of bounds
+2. Test divide by 0
+3. Test 2d array out of bounds
+4. Stack overflow
+5. A really big program that would make the machine run out of memory

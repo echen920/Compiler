@@ -1,0 +1,85 @@
+The way we tested our cup file was by writing simple programs that implement
+each feature of the language. For the failure test cases, what we did was
+omit certain keywords or did other common invalid syntax errors.
+
+Below is the documentation for our test cases
+
+=========================
+
+a1tests - corrected files from assignment 1
+
+=========================
+Scope Tests
+
+Passing:
+1. Test the most basic program
+2. Test a very simple program
+3. Tests a statement embedded within a single nested scope.
+4. Tests a succession of two empty scopes each with one empty nested scope.
+5. Tests loop embedded with main scope where all scopes are properly closed.
+
+Failing:
+1. Test a program missing the begin statement
+2. Test a program missing scope
+3. Tests the empty string.
+4. Tests a statement embedded within a single nested scope that is not properly closed.
+5. Tests a succession of two empty scopes each with one empty nested scope but with a variable declaration outside of the main scope.
+6. Tests an even number of "begin" and "end" but where one of the "end" should end the loop. (Missing scope close)
+
+
+==========================
+Loop tests
+
+Passing:
+1. Tests a basic loop
+2. Tests a while loop
+3. Tests a nested loop
+4. Tests exit statement
+5. Tests exit when statement
+
+Failing:
+1. Tests a loop with missing end
+2. Tests a while loop missing the do keyword
+3. Tests a while loop that is missing the while keyword
+4. Tests a while loop that is missing the end statement
+5. Tests a while loop with an illegal expression
+6. Tests an empty loop
+7. Tests an empty while loop
+
+=========================
+Function tests
+
+Passing
+1. This tests the most basic program
+2. This tests function syntax
+3. This tests procedure syntax
+4. This tests anonymous function syntax
+
+
+Failing
+1. Test a program that just has end
+2. Test procedure with type and assigning a variable from a procedure
+3. function without a return, assigned to variable
+5. Anonymous function without statement
+6. Anonymous function without yield
+7. function without return
+12. Function with no name
+13. Procedure with no name
+
+note: Numbering is off because some actually correct cases were removed
+==========================
+Expression tests
+
+Passing
+1. Tests basic operators with fixed values
+2. Tests arithmetic operators with variables
+3. Tests arithmetic operators with mix of variables and fixed integers
+4. Tests expressions with parathesis
+5. Tests function call expressions
+
+Failing
+1. Tests illegal comparisons
+2. Tests illegal characters
+3. Tests illegal arithmetic operators
+4. Tests illegal function call
+5. Tests illegal use of parentheses
